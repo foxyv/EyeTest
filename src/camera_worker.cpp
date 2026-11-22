@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: GPL-2.0-or-later
+// Copyright (C) 2026 foxyv
 #include "camera_worker.hpp"
 
 #include <ps3eye.hpp>

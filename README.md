@@ -30,7 +30,11 @@ cmake --build build --config Release
 
 The app is built to `build/bin/Release/`.
 
-## Credits and licences
+## Licence
+
+EyeTest is released under **GPL-2.0-or-later** (see `LICENSE`), because it includes GPL-licensed PS3EYEDriver code. Third-party notices are in `THIRD-PARTY-NOTICES.txt`.
+
+## Credits
 
 - `third_party/ps3eye`: PS3EYEDriver (inspirit, as maintained by the OpenTrack project), with a fix to its USB error handling. See its `LICENSE`.
 - `third_party/libusb`: libusb 1.0.30 (LGPL-2.1), used as a separate DLL.

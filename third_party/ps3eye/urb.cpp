@@ -1,3 +1,5 @@
+// Modified 2026 by foxyv: USB transfer error handling (no endless resubmit,
+// no close_transfers() from the callback, correct active-transfer count).
 #include "urb.hpp"
 #include "mgr.hpp"
 
