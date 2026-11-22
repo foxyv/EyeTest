@@ -24,6 +24,7 @@ Settings apply live and are not saved in the camera. The camera goes back to its
 Needs Visual Studio 2022 (or its Build Tools) and CMake 3.20+. SDL2 2.30.9 and Dear ImGui 1.91.5 download automatically at configure time.
 
 ```
+git submodule update --init
 cmake -S . -B build -G "Visual Studio 17 2022" -A x64
 cmake --build build --config Release
 ```
@@ -36,6 +37,6 @@ EyeTest is released under **GPL-2.0-or-later** (see `LICENSE`), because it inclu
 
 ## Credits
 
-- `third_party/ps3eye`: PS3EYEDriver (inspirit, as maintained by the OpenTrack project), with a fix to its USB error handling. See its `LICENSE`.
+- `third_party/ps3eye`: submodule of [foxyv/PS3EYEDriver](https://github.com/foxyv/PS3EYEDriver) (`fixes` branch), a fork of OpenTrack's PS3EYEDriver (originally by inspirit) with USB error handling fixes and automatic recovery. Clone with `git clone --recurse-submodules`. See its `LICENSE`.
 - `third_party/libusb`: libusb 1.0.30 (LGPL-2.1), used as a separate DLL.
 - SDL2 (zlib licence) and Dear ImGui (MIT).

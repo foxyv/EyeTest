@@ -1,0 +1,4 @@
+[submodule "third_party/ps3eye"]
+	path = third_party/ps3eye
+	url = https://github.com/foxyv/PS3EYEDriver.git
+	branch = fixes

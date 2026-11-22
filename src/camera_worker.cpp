@@ -178,6 +178,7 @@ void CameraWorker::run()
                 continue;
             }
             applied = want;
+            cam->set_frame_timeout(500);
             actual_fps_ = cam->framerate();
             dropped_ = 0;
             fails = 0;
@@ -204,6 +205,17 @@ void CameraWorker::run()
         {
             apply(*cam, want, &applied);
             applied = want;
+        }
+
+        // The stream died (every transfer retired, or a control transfer
+        // failed). Close and reopen: init() resets the device once if needed.
+        if (!cam->healthy())
+        {
+            set_status(CameraState::Error, "Camera stopped responding. Reconnecting...");
+            measured_fps_ = 0;
+            close();
+            std::this_thread::sleep_for(1s);
+            continue;
         }
 
         // Grab a frame (blocks up to 1 s)
