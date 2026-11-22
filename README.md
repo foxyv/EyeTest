@@ -40,3 +40,7 @@ EyeTest is released under **GPL-2.0-or-later** (see `LICENSE`), because it inclu
 - `third_party/ps3eye`: submodule of [foxyv/PS3EYEDriver](https://github.com/foxyv/PS3EYEDriver) (`fixes` branch), a fork of OpenTrack's PS3EYEDriver (originally by inspirit) with USB error handling fixes and automatic recovery. Clone with `git clone --recurse-submodules`. See its `LICENSE`.
 - `third_party/libusb`: libusb 1.0.30 (LGPL-2.1), used as a separate DLL.
 - SDL2 (zlib licence) and Dear ImGui (MIT).
+
+## Power fix
+
+If the camera stops working after the PC sleeps, run `ps3eye-power-fix.ps1` once from an Administrator PowerShell (`-WhatIf` previews it, `-Undo` reverts it). It turns off Windows USB power management for PS3 Eye cameras. Then unplug and replug the camera.
